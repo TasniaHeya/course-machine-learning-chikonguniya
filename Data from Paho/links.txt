@@ -1,1 +1,4 @@
-https://www.paho.org/hq/index.php?option=com_topics&view=rdmore&cid=5927&item=chikungunya&type=statistics&Itemid=40931&lang=en
+Data source: https://www.paho.org/hq/index.php?option=com_topics&view=rdmore&cid=5927&item=chikungunya&type=statistics&Itemid=40931&lang=en
+
+Converted from: https://pdftoxls.com/
+20 files at a time
