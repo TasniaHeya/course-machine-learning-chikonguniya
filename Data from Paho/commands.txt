@@ -1,0 +1,6 @@
+to convert to ods:
+
+for i in *.xlsx; 
+do 
+	libreoffice --convert-to ods $i; 
+done
