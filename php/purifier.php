@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","chikonguniya");
+$conn = mysqli_connect("localhost","root","","chikonguniya_auto_2016");
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -9,14 +9,14 @@ if (mysqli_connect_errno())
 
   
 
-$sqlDelete = "TRUNCATE TABLE filteredmaster2017";
+$sqlDelete = "TRUNCATE TABLE filteredmaster2016";
 $as = $conn->query($sqlDelete);
 echo $as;
 
 echo "<br>";
 
 
-$sql = "SELECT * FROM master2017";
+$sql = "SELECT * FROM sheet1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -29,10 +29,13 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       
 
-        $a = array( '>', '*', '(1)', '(2)', '(^)' );
-        $filteredName = rtrim(ltrim(str_replace( $a,"",$row["Country/Territory"]))); 
+        $a = array( '>', '*', '(1)', '(2)', '(^)', '()', '#' );
+        $filteredName = rtrim(rtrim(ltrim(str_replace( $a,"",$row["Country/Territory"]))),'&'); 
 
         $week = rtrim(ltrim(str_replace( "WEEK","", $row["Epidemiological Weeks"]))); 
+
+        $week = rtrim(ltrim(str_replace( "Week","", $week))); 
+
 
         $population = rtrim(ltrim(str_replace( ",","", $row["Populatione X 1000"]))); 
        
@@ -70,14 +73,14 @@ if ($result->num_rows > 0) {
             $incidence = 0;
         }
 
-        $sqlInsert = 'INSERT INTO filteredmaster2017 VALUES(
+        $sqlInsert = 'INSERT INTO filteredmaster2016 VALUES(
             "'.$filteredName.'", 
            '. $week.',
            '. $row["Suspected"].',
            '. $row["Confirmed"].',
-           '. $row["Imported cases"].',
-           '. $row["Incidence Ratec"].',
-           '. $row["Deaths"].',
+           '. $imported.',
+           '. $incidence.',
+           '. $deaths.',
            '. $population.'
             )';
 

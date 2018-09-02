@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","chikonguniya");
+$conn = mysqli_connect("localhost","root","","chikonguniya_auto_2016");
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -7,7 +7,7 @@ if (mysqli_connect_errno())
     echo "database connected";
   }
 
-  $sql = "SELECT * FROM filteredmaster2017";
+  $sql = "SELECT * FROM filteredmaster2016";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
