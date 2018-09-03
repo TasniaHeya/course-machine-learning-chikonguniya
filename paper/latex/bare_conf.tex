@@ -91,20 +91,20 @@
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 % Do not put math or special symbols in the title.
-\title{\LARGE Predective analysis of Chikungunya}
+\title{\LARGE Predictive Analysis of Chikungunya}
 
 
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
 \author{\IEEEauthorblockN{Sayed Erfan Arefin\IEEEauthorrefmark{1},
-Tasnia Ashrafi Heya\IEEEauthorrefmark{1} and Dr Moinul Islam Zaber \IEEEauthorrefmark{1}}
+Tasnia Ashrafi Heya\IEEEauthorrefmark{1} and Dr Moinul Zaber \IEEEauthorrefmark{1}}
 \IEEEauthorblockA{Computer Science and Engineering Depertment,
 BRAC University\\
 66, Mohakhali, Dhaka\\
 Email: \IEEEauthorrefmark{1}erfanjordison@gmail.com,
 \IEEEauthorrefmark{1}tasnia.heya@gmail.com,
-\IEEEauthorrefmark{1}moinul.jaber@bracu.ac.bd}}
+\IEEEauthorrefmark{1}zaber@du.ac.bd}}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -168,11 +168,11 @@ Chikunguniya, Machine learning
 
 
 \section{Introduction}
-In December 2013, public health surveillance affirmed the main neighborhood transmission of Chikungunya infection in the Caribbean and only within three months, the infection spread from  Saint Martin island to six other neighboring islands including French Guiana and South America [1]. Cassadou et al. and Omarjee et al. have elaborated the significance of proactive public health practice in such emergency situation of rising vector borne diseases [2]. Most demonstrating papers center around the vector, yet, there is a detectable absence of research according to the the consideration of people into the numerical models. The vast majority of the work around this context is being done in France and Italy, which utilize diverse methodologies in their estimations [ECDC teleconference, January 2008] [3].
+In December 2013, public health surveillance affirmed the main neighborhood transmission of Chikungunya infection in the Caribbean and only within three months, the infection spread from  Saint Martin island to six other neighboring islands including French Guiana and South America \cite{one}. Cassadou et al. and Omarjee et al. have elaborated the significance of proactive public health practice in such emergency situation of rising vector borne diseases \cite{two}. Most demonstrating papers center around the vector, yet, there is a detectable absence of research according to the the consideration of people into the numerical models. The vast majority of the work around this context is being done in France and Italy, which utilize diverse methodologies in their estimations [ECDC teleconference, January 2008] \cite{three}.
 
-Schuler et al. has explained the epidemiological situation of TBE in Switzerland over a five year period, implying the heterogeneity of the frequency as indicated by cantons and the significance of the observation and inoculation as a preventive measure [4]. To investigate the prediction of rising diseases like chikungunya, the Defense Advanced Research Projects Agency (DARPA) propelled the 2014– 2015  Chikungunya Challenge to conjecture the quantity of cases and spread of chikungunya illness all over America by comparing the incidence data reported to the Pan American Health Organization (PAHO) [5]. Viable forecasting is doable with careful investigations but, there is a need to enhance the data quality to achieve more precise predicted results.
+Schuler et al. has explained the epidemiological situation of TBE in Switzerland over a five year period, implying the heterogeneity of the frequency as indicated by cantons and the significance of the observation and inoculation as a preventive measure \cite{four}. To investigate the prediction of rising diseases like chikungunya, the Defense Advanced Research Projects Agency (DARPA) propelled the 2014– 2015  Chikungunya Challenge to conjecture the quantity of cases and spread of chikungunya illness all over America by comparing the incidence data reported to the Pan American Health Organization (PAHO) \cite{five}. Viable forecasting is doable with careful investigations but, there is a need to enhance the data quality to achieve more precise predicted results.
 
-According to [6], data of the acute clinical profile, quality of life and consequent economic burden of the chikungunya patience was collected and summarized during the outbreak from May to September 2017, in Dhaka, Bangladesh. Analysing the quality of life of 1,326 chikungunya cases along with the analysis of major clinical variables have failed to show any statistically remarkable differences between confirmed and probable cases where their aim was to contribute for an effective syndromic surveillance system with early detection of future chikungunya outbreaks in resource-limited countries like Bangladesh.
+According to \cite{six}, data of the acute clinical profile, quality of life and consequent economic burden of the chikungunya patience was collected and summarized during the outbreak from May to September 2017, in Dhaka, Bangladesh. Analysing the quality of life of 1,326 chikungunya cases along with the analysis of major clinical variables have failed to show any statistically remarkable differences between confirmed and probable cases where their aim was to contribute for an effective syndromic surveillance system with early detection of future chikungunya outbreaks in resource-limited countries like Bangladesh.
 
 
 \thispagestyle{empty}
@@ -340,6 +340,45 @@ $conn->query($updateSql);
 Some entries such as, rows with country name Peru, Venezuela etc failed to get weather data from the Dark Sky API for the given date. We didn’t used those entries in our final dataset. 
 
 
+\section{Statistical Analysis}
+We can see from the Figure  ~\ref{1} and ~\ref{2} that, in 2014, both suspected and confirmed cases were higher than other three years which means the rate of spreading chikungunya virus was the highest in this year. On the other hand, confirmed cases were lowest in 2017 however, suspected cases were lowest in 2015. Yet, we can see from the incidence rate in Figure ~\ref{3}, that in after 2014, in 2015, rate of spreading this disease is higher than next two years by the total incidence rate.
+From Figure  ~\ref{4} , we can see the effects of weather in spreading of chikungunya where it can be said that it is mostly spread in cloudy and humid weather from the graphical presentation from the dataset against total incidence rate .
+
+\begin{figure}[ht!] %!t
+ \centering
+ \includegraphics[width=3.5in]{1.png}
+ \caption{Count of Suspected Cases in 4 years}
+ \label{1}
+ \end{figure}
+
+
+\begin{figure}[ht!] %!t
+ \centering
+ \includegraphics[width=3.5in]{2.png}
+ \caption{Count of Confirmed Cases in 4 years}
+ \label{2}
+ \end{figure}
+
+
+\begin{figure}[ht!] %!t
+ \centering
+ \includegraphics[width=3.5in]{3.png}
+ \caption{Sum of incidence rate by year}
+ \label{3}
+ \end{figure}
+
+
+\begin{figure}[ht!] %!t
+ \centering
+ \includegraphics[width=3.5in]{4.png}
+ \caption{Count of incidence rate by weather\_summary}
+ \label{4}
+ \end{figure}
+
+
+
+
+
 
 \section{Result}
  We have used Linear Regression for the Incidence Rate prediction on the extended and updated dataset considering Country, Week, Suspected, Confirmed, Imported cases, Deaths, Populatione X 1000, Year, Latitude, Longitude, weather\_temperature, weather\_summary, weather\_dewPoint, weather\_humidity, weather\_pressure and weather\_windSpeed as parameters. The comparison of the incidence rate and the scored label of the incidence rate by Linear regression for 2014, 2015, 2016 and 2017 is presented graphically in Fig ~\ref{compare_score_2014}, ~\ref{compare_score_2015}, ~\ref{compare_score_2016} and ~\ref{compare_score_2017} respectively. 
@@ -362,44 +401,65 @@ Coefficient of Determination & 0.577198 \\ \hline
 
 \begin{figure}[ht!] %!t
  \centering
- \includegraphics[width=3.75in]{5.png}
+ \includegraphics[width=3.5in]{5.png}
  \caption{Comparison of scored results in 2014 }
  \label{compare_score_2014}
  \end{figure}
 
 \begin{figure}[ht!] %!t
  \centering
- \includegraphics[width=3.75in]{6.png}
+ \includegraphics[width=3.5in]{6.png}
  \caption{Comparison of scored results in 2015 }
  \label{compare_score_2015}
  \end{figure}
 
 \begin{figure}[ht!] %!t
  \centering
- \includegraphics[width=3.75in]{7.png}
+ \includegraphics[width=3.5in]{7.png}
  \caption{Comparison of scored results in 2016}
  \label{compare_score_2016}
  \end{figure}
 
 \begin{figure}[ht!] %!t
  \centering
- \includegraphics[width=3.75in]{8.png}
+ \includegraphics[width=3.5in]{8.png}
  \caption{Comparison of scored results in 2017}
  \label{compare_score_2017}
  \end{figure}
 
 
+\clearpage
 \thispagestyle{empty}
 \section{Conclusion}
 
-Though there are several useful applications of robotic arms but there exists some limitations as well. For instance, lacking opportunities of remotely accessibility in hazardous areas where human cannot operate them directly because of, lack of communicating skills of the arms on those places, lacking of quick learning skills from both human and other intelligent robots to become prepared for any critical situation. These limitations can be solved by using the IoRT services which can be very beneficial for increasing scopes of robotic arms and their rapid learning skills.
-In this paper, we tried to implement and improvise the concept of Internet of Robotic Things (IoRT) with a 5 DoF heterogeneous robotic arm which will be a great addition in the robotic field as it will work as a smart IoRT device connected with Internet and able to communicate efficiently regarding desired tasks, in addition, it can take decisions by rapid collective and collaborative learning from other robotic arms. This smart robotic arm can be beneficial in various fields such as clinical services, security services, industrial services, differentiating objects with colors or patterns and it can perform tasks in dangerous situations instead of endangering human lives. Efficient Implementation of Rapid Organic Learning from human activity includes in our future work.
+By using the Microsoft Azure Machine learning Studio, Google GeoCode API, Google Timezone API and Dark Sky API, we were able to utilize the reports collected from PAHO on chikunguniya. We can use this trained models to predict the chances of Chikunguniya spread by providing weather information, geo coordinates and population.
+
 
 \begin{thebibliography}{1}
 
 \bibitem{one}
-L. Aggarwal, V. Gaur, and P. Verma, "Design and Implementation of a Wireless Gesture Controlled Robotic Arm with Vision," International Journal of Computer Applications (0975 - 8887), volume 79 - No 13, October 2013.
+Semenza JC, Zeller H. Integrated surveillance for prevention and control of emerging vector-borne diseases in Europe. Euro Surveill. 2014;19(13):pii=20757. Available online: http://www.eurosurveillance.org/ViewArticle.aspx?ArticleId=20757
 
+\bibitem{two}
+Cassadou S, Boucau S, Petit-Sinturel M, Huc P, Leparc-Goffart I, Ledrans M. Emergence of chikungunya fever on the French side of Saint Martin island, October to December 2013. Euro Surveill. 2014;19(13):pii=20752.
+
+\bibitem{three}
+ECDC Meeting Report, Expert meeting on chikungunya modelling Stockholm, April 2008. Available online: https://ecdc.europa.eu/sites/portal/files/media/en/publications
+/Publications/0804\_MER\_Chikungunya\_Modelling.pdf
+
+\bibitem{four}
+Schuler M, Zimmermann H, Altpeter E, Heininger U. Epidemiology of tick-borne encephalitis in Switzerland, 2005 to 2011. Euro Surveill. 2014;19(13):pii=20756.
+
+\bibitem{five}
+S Y. Del Valle, B H. McMahon, J Asher, R Hatchett, ‘Summary results of the 2014-2015 DARPA Chikungunya challenge’, 30 May 2018. Available at: [online] https://doi.org/10.1186/s12879-018-3124-7
+
+\bibitem{six} 
+M S Hossain , Md. M Hasan, M S Islam, S Islam, M Mozaffor, Md. A S Khan, ‘Chikungunya outbreak (2017) in Bangladesh: Clinical profile, economic impact and quality of life during the acute phase of the disease’, 2018 June 6. Available at: [online] 10.1371/journal.pntd.0006561
+
+\bibitem{seven}
+Chikungunya: Communicable Diseases and Health Analysis (CHA) - Communicable Diseases and Health Analysis (CHA), Data, Maps and Statistics. Available online: https://www.paho.org/hq/index.php?option=com\_topics\&
+view=rdmore\&cid=5927\&item=chikungunya
+\&type=statistics\&Itemid=40931\&lang=en
 
 
 \end{thebibliography}
